@@ -33,8 +33,8 @@ export function PromptCard({
   onPromptDeleted,
 }: PromptCardProps) {
   const calculateUsagePercentage = (prompt: Prompt) => {
-    const maxUsage = 100; // You can adjust this based on your needs
-    return Math.min((prompt.usageCount / maxUsage) * 100, 100);
+    const maxUsage = 10000; // You can adjust this based on your needs
+    return Math.min((prompt.usageCount / maxUsage) * 100, 10000);
   };
 
   const usagePercentage = calculateUsagePercentage(prompt);

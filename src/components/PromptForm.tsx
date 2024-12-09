@@ -5,11 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { PromptFormData } from '@/types/prompt';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 
 interface PromptFormProps {
   initialData?: PromptFormData;
-  onSubmit: (data: PromptFormData) => Promise<void>; // onSubmit is now async
+  onSubmit: (data: PromptFormData) => void;
   onCancel: () => void;
 }
 
@@ -44,15 +44,14 @@ export function PromptForm({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
       return;
     }
 
-    // Now calls the onSubmit prop (which will be a Server Action)
-    await onSubmit(formData);
+    onSubmit(formData);
   };
 
   const handleAddTag = () => {
@@ -160,7 +159,7 @@ export function PromptForm({
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
         </Button>
-        <Button type="submit">Save</Button>{' '}
+        <Button type="submit">Save</Button>
       </div>
     </form>
   );
