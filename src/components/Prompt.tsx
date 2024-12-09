@@ -108,7 +108,7 @@ export default function PromptManager() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center">
       <Toaster position="top-right" richColors />
       <div className="container py-8 space-y-8">
         <div className="text-center">
