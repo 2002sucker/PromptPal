@@ -114,7 +114,7 @@ export default function PromptManager() {
         <div className="text-center">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-4xl font-bold mb-4">AI Prompt Saver</h1>
+              <h1 className="text-4xl font-bold mb-4">Prompt Pal</h1>
               <p className="text-xl text-gray-600">
                 Manage your AI prompts efficiently
               </p>
