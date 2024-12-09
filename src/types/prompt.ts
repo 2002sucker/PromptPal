@@ -1,23 +1,11 @@
-export interface Prompt {
-  id: string;
+// types/prompt.ts
+import { prompts } from '@/db/schema';
+import { InferSelectModel } from 'drizzle-orm';
 
+export type Prompt = InferSelectModel<typeof prompts>;
+
+export type PromptFormData = {
   title: string;
-
   content: string;
-
   tags: string[];
-
-  usageCount: number;
-
-  createdAt: string;
-
-  updatedAt: string;
-}
-
-export interface PromptFormData {
-  title: string;
-
-  content: string;
-
-  tags: string[];
-}
+};
